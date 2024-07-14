@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="cart.js" defer></script>
+<title>Food Menu</title>
+<style>
+    body {
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        margin: 0;
+        padding: 0;
+        animation: slideBackground 45s infinite linear;
+    }
+    @keyframes slideBackground {
+            0% { background-position: 0 0; }
+            100% { background-position: -10000px 0; }
+        }
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #eec8f4;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .menu-section {
+        margin-bottom: 30px;
+    }
+    .menu-section h3 {
+        font-size: 24px;
+        border-bottom: 2px solid #333;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+    }
+    .food-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+    .food-item:last-child {
+        border-bottom: none;
+    }
+    .food-details {
+        flex: 1;
+    }
+    .food-price {
+        margin-left: 20px;
+    }
+    select {
+        padding: 8px;
+        font-size: 16px;
+    }
+    .cart {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+    }
+    .cart h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #333;
+        padding-bottom: 5px;
+    }
+    .cart-items {
+        margin-bottom: 15px;
+    }
+    .cart-item {
+        margin-bottom: 10px;
+    }
+    .cart-total {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .confirm-order {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .confirm-order button {
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+    .confirm-order button:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body background="C:\Users\sanjay\Desktop\restaurant\menu.jpg">
+<div class="container">
+    <h2>Food Menu</h2>
+
+    <!-- Veg Starters Section -->
+    <div class="menu-section">
+        <h3>Veg Starters</h3>
+        <div class="food-item">
+            <div class="food-details">Paneer Tikka</div>
+            <div class="food-price">Rs. 150</div>
+            <select name="veg-starters-item1">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Veg Manchurian</div>
+            <div class="food-price">Rs. 120</div>
+            <select name="veg-starters-item2">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Veg Spring Rolls</div>
+            <div class="food-price">Rs. 100</div>
+            <select name="veg-starters-item3">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Vegetable Pakora</div>
+            <div class="food-price">Rs. 80</div>
+            <select name="veg-starters-item4">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Aloo Tikki</div>
+            <div class="food-price">Rs. 90</div>
+            <select name="veg-starters-item5">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Non Veg Starters Section -->
+    <div class="menu-section">
+        <h3>Non Veg Starters</h3>
+        <div class="food-item">
+            <div class="food-details">Chicken Wings</div>
+            <div class="food-price">Rs. 180</div>
+            <select name="non-veg-starters-item1">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Fish Fry</div>
+            <div class="food-price">Rs. 200</div>
+            <select name="non-veg-starters-item2">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Prawn Tempura</div>
+            <div class="food-price">Rs. 220</div>
+            <select name="non-veg-starters-item3">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Chicken Lollipop</div>
+            <div class="food-price">Rs. 160</div>
+            <select name="non-veg-starters-item4">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Chicken Satay</div>
+            <div class="food-price">Rs. 170</div>
+            <select name="non-veg-starters-item5">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Continental Section -->
+    <div class="menu-section">
+
+
+        <h3>Continental</h3>
+        <div class="food-item">
+            <div class="food-details">Chicken Caesar Salad</div>
+            <div class="food-price">Rs. 250</div>
+            <select name="continental-item1">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Beef Burger</div>
+            <div class="food-price">Rs. 280</div>
+            <select name="continental-item2">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Grilled Salmon</div>
+            <div class="food-price">Rs. 320</div>
+            <select name="continental-item3">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Pasta Alfredo</div>
+            <div class="food-price">Rs. 200</div>
+            <select name="continental-item4">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Margherita Pizza</div>
+            <div class="food-price">Rs. 180</div>
+            <select name="continental-item5">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Italian Section -->
+    <div class="menu-section">
+        <h3>Italian</h3>
+        <div class="food-item">
+            <div class="food-details">Lasagna</div>
+            <div class="food-price">Rs. 280</div>
+            <select name="italian-item1">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Spaghetti Carbonara</div>
+            <div class="food-price">Rs. 250</div>
+            <select name="italian-item2">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Ravioli</div>
+            <div class="food-price">Rs. 300</div>
+            <select name="italian-item3">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Bruschetta</div>
+            <div class="food-price">Rs. 150</div>
+            <select name="italian-item4">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Caprese Salad</div>
+            <div class="food-price">Rs. 180</div>
+            <select name="italian-item5">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Veg Biriyanis Section -->
+    <div class="menu-section">
+        <h3>Veg Biriyanis</h3>
+        <div class="food-item">
+            <div class="food-details">Vegetable Biryani</div>
+            <div class="food-price">Rs. 200</div>
+            <select name="veg-biriyani-item1">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Paneer Biryani</div>
+            <div class="food-price">Rs. 220</div>
+            <select name="veg-biriyani-item2">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Mushroom Biryani</div>
+            <div class="food-price">Rs. 180</div>
+            <select name="veg-biriyani-item3">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Soya Chunks Biryani</div>
+            <div class="food-price">Rs. 190</div>
+            <select name="veg-biriyani-item4">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Jackfruit Biryani</div>
+            <div class="food-price">Rs. 210</div>
+            <select name="veg-biriyani-item5">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Non Veg Biriyanis Section -->
+    <div class="menu-section">
+        <h3>Non Veg Biriyanis</h3>
+        <div class="food-item">
+            <div class="food-details">Chicken Biryani</div>
+            <div class="food-price">Rs. 250</div>
+            <select name="non-veg-biriyani-item1">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="
+
+3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Mutton Biryani</div>
+            <div class="food-price">Rs. 300</div>
+            <select name="non-veg-biriyani-item2">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Fish Biryani</div>
+            <div class="food-price">Rs. 280</div>
+            <select name="non-veg-biriyani-item3">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Prawn Biryani</div>
+            <div class="food-price">Rs. 320</div>
+            <select name="non-veg-biriyani-item4">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Egg Biryani</div>
+            <div class="food-price">Rs. 200</div>
+            <select name="non-veg-biriyani-item5">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Desserts Section -->
+    <div class="menu-section">
+        <h3>Desserts</h3>
+        <div class="food-item">
+            <div class="food-details">Chocolate Brownie</div>
+            <div class="food-price">Rs. 120</div>
+            <select name="desserts-item1">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Gulab Jamun</div>
+            <div class="food-price">Rs. 100</div>
+            <select name="desserts-item2">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Rasgulla</div>
+            <div class="food-price">Rs. 80</div>
+            <select name="desserts-item3">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Ice Cream Sundae</div>
+            <div class="food-price">Rs. 150</div>
+            <select name="desserts-item4">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Fruit Salad</div>
+            <div class="food-price">Rs. 100</div>
+            <select name="desserts-item5">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Ice Creams Section -->
+    <div class="menu-section">
+        <h3>Ice Creams</h3>
+        <div class="food-item">
+            <div class="food-details">Vanilla Ice Cream</div>
+            <div class="food-price">Rs. 80</div>
+            <select name="ice-creams-item1">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Chocolate Ice Cream</div>
+            <div class="food-price">Rs. 90</div>
+            <select name="ice-creams-item2">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Strawberry Ice Cream</div>
+            <div class="food-price">Rs. 100</div>
+            <select name="ice-creams-item3">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Butterscotch Ice Cream</div>
+            <div class="food-price">Rs. 90</div>
+            <select name="ice-creams-item4">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="food-item">
+            <div class="food-details">Mango Ice Cream</div>
+            <div class="food-price">Rs. 110</div>
+            <select name="ice-creams-item5">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Cart Section -->
+    <div class="cart">
+        <h3>Cart</h3>
+        <div class="cart-items">
+            <!-- Cart items will be dynamically added using JavaScript -->
+        </div>
+        <div class="cart-total">
+            Total: Rs. <span id="totalAmount">0</span>
+        </div>
+        <div class="confirm-order">
+            <a href="common1.html"><button onclick="confirmOrder()">Confirm Order</button>
+                </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Function to handle addition of items to cart and calculation of total amount
+    function addToCart(section, itemName, price, quantity) {
+        // Create cart item HTML
+        var cartItemHTML = `<div class="cart-item">${itemName} - Rs. ${price} x ${quantity}</div>`;
+
+        // Append cart item to cart items container
+        document.querySelector('.cart-items').innerHTML += cartItemHTML;
+
+        // Calculate and update total amount
+
+
+        var totalAmountElement = document.getElementById('totalAmount');
+        var currentTotalAmount = parseFloat(totalAmountElement.textContent);
+        var itemTotal = parseFloat(price) * parseInt(quantity);
+        totalAmountElement.textContent = currentTotalAmount + itemTotal;
+    }
+
+    // Function to handle order confirmation (can be further expanded as needed)
+    function confirmOrder() {
+        // Example confirmation logic
+        alert('Order Confirmed! Check console for further details.');
+        console.log('Order confirmed!');
+    }
+</script>
+</body>
+</html>

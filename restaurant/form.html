@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback form</title>
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-color: #f0f0f0; /* Fallback color if the image is not loaded */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: black;
+        }
+
+        .feedback-form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .rating {
+            unicode-bidi: bidi-override;
+            direction: rtl;
+            text-align: center;
+            position: relative;
+        }
+
+        .rating input {
+            display: none;
+        }
+
+        .rating label {
+            display: inline-block;
+            padding: 5px;
+            font-size: 24px;
+            color: #231b1b;
+            cursor: pointer;
+        }
+
+        .rating label:before {
+            content: '\2605';
+        }
+
+        .rating input:checked ~ label {
+            color: #f90;
+        }
+
+        .rating label:hover,
+        .rating label:hover ~ label {
+            color: #f90;
+        }
+
+        button[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+    <script>
+        function submitFeedback(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Here you can add code to handle the feedback submission
+            // For example, sending the data to the server using AJAX
+
+            // After handling the submission, redirect to the thank you page
+            window.location.href = "thanku.html";
+        }
+    </script>
+</head>
+<body background="C:\Users\sanjay\Desktop\restaurant\form.jpg">
+    <div class="container">
+        <h1>Your Feedback Helps Us...</h1>
+        <h2>Please Provide Your Opinion On The following.</h2>
+
+        <div class="feedback-form">
+            <h2>Customer Feedback Form</h2>
+            <form onsubmit="submitFeedback(event)">
+                <div class="form-group">
+                    <label for="overall">Taste of Food:</label>
+                    <div class="rating">
+                        <input type="radio" id="star5" name="overall" value="5"><label for="star5"></label>
+                        <input type="radio" id="star4" name="overall" value="4"><label for="star4"></label>
+                        <input type="radio" id="star3" name="overall" value="3"><label for="star3"></label>
+                        <input type="radio" id="star2" name="overall" value="2"><label for="star2"></label>
+                        <input type="radio" id="star1" name="overall" value="1"><label for="star1"></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="ambiance">Ambiance of Restaurant:</label>
+                    <div class="rating">
+                        <input type="radio" id="star10" name="ambiance" value="5"><label for="star10"></label>
+                        <input type="radio" id="star9" name="ambiance" value="4"><label for="star9"></label>
+                        <input type="radio" id="star8" name="ambiance" value="3"><label for="star8"></label>
+                        <input type="radio" id="star7" name="ambiance" value="2"><label for="star7"></label>
+                        <input type="radio" id="star6" name="ambiance" value="1"><label for="star6"></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="serving">Serving Of Food:</label>
+                    <div class="rating">
+                        <input type="radio" id="star15" name="serving" value="5"><label for="star15"></label>
+                        <input type="radio" id="star14" name="serving" value="4"><label for="star14"></label>
+                        <input type="radio" id="star13" name="serving" value="3"><label for="star13"></label>
+                        <input type="radio" id="star12" name="serving" value="2"><label for="star12"></label>
+                        <input type="radio" id="star11" name="serving" value="1"><label for="star11"></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="experience">Overall Experience:</label>
+                    <div class="rating">
+                        <input type="radio" id="star20" name="experience" value="5"><label for="star20"></label>
+                        <input type="radio" id="star19" name="experience" value="4"><label for="star19"></label>
+                        <input type="radio" id="star18" name="experience" value="3"><label for="star18"></label>
+                        <input type="radio" id="star17" name="experience" value="2"><label for="star17"></label>
+                        <input type="radio" id="star16" name="experience" value="1"><label for="star16"></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="comments">Additional Comments:</label>
+                    <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+                </div>
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

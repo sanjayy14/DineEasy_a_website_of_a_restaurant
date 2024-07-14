@@ -1,0 +1,123 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.center-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.center-button {
+    padding: 15px 20px;
+    font-size: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.center-button2 {
+    padding: 15px 20px;
+    font-size: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.center-button1 {
+    padding: 20px 40px;
+    font-size: 20px;
+    background-color: #ef2a93;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container1 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left {
+    text-align: left;
+    font-size: 24px;
+    color: #42db8e;
+}
+
+.right {
+    text-align: right;
+    font-size: 24px;
+    color: #45e6a6;
+}
+
+.tables {
+    text-align: center; /* Align buttons in the center */
+    margin-top: 20px; /* Add some top margin */
+}
+
+.tables {
+    text-align: center;
+}
+
+/* Style the buttons */
+.tables button {
+    display: block;
+    width: 150px;
+    height: 50px;
+    margin: 10px auto;
+    background-color: #1fd7d7;
+    color: rgb(5, 2, 2);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.tables a {
+    text-decoration: none; /* Remove underline from anchor tags */
+}
+
+/* Hover effect */
+.tables button:hover {
+    background-color: #fcfffc;
+}
+
+.tables button:active {
+    background-color: #3e8e41;
+}
+
+.book_table button {
+    display: block;
+    width: 220px;
+    height: 60px;
+    margin: 20px auto;
+    background-color: #efa510;
+    color: rgb(5, 2, 2);
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.book_table a {
+    text-decoration: none; /* Remove underline from anchor tags */
+}
+
+.book_table button:hover {
+    background-color: #fcfffc;
+}
+
+.book_table button:active {
+    background-color: #3e8e41;
+}
+

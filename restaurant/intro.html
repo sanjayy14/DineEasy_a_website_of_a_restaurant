@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<head>
+    <title>DINE EASY-Restaurant Directory</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            padding: 100px 20px;
+            background: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('background.jpg');
+            background-size: cover;
+            animation: slideBackground 45s infinite linear;
+        }
+
+        @keyframes slideBackground {
+            0% { background-position: 0 0; }
+            100% { background-position: -10000px 0; }
+        }
+
+        .header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 24px;
+        }
+
+        .restaurants {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .restaurants h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .restaurant-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .restaurant-item {
+            margin: 15px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            width: calc(25% - 30px);
+        }
+        .restaurant-item a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+}
+
+        .restaurant-item:hover {
+            transform: scale(1.05);
+        }
+
+        .restaurant-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .restaurant-item h3 {
+            padding: 15px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Welcome to Dine Easy</h1>
+        <p>Discover the best restaurants near you</p>
+    </header>
+
+    <section class="restaurants">
+        <h2>Featured Restaurants</h2>
+        <div class="restaurant-list">
+            <div class="restaurant-item">
+                <a href="urban1.html">
+                <img src="rest5.jpg" alt="Restaurant 1">
+                <h3>Urban Bites</h3>
+                </a>
+            </div>
+            <div class="restaurant-item">
+                <a href="sanu1.html">
+                <img src="rest2.jpg" alt="Restaurant 2">
+                <h3>Sanu Restaurant</h3>
+                </a>
+            </div>
+            <div class="restaurant-item">
+                <a href="train.html">
+                <img src="rest12.jpg" alt="Restaurant 3">
+                <h3>Train Restaurant</h3>
+                </a>
+            </div>
+            <div class="restaurant-item">
+                <a href="indian_cuisine.html">
+                <img src="rest8.jpg" alt="Restaurant 4">
+                <h3>Indian cuisine</h3>
+                </a>
+            </div>
+            <div class="restaurant-item">
+                <a href="fusion.html">
+                <img src="rest1.jpg" alt="Restaurant 5">
+                <h3>Fusion Feast</h3>
+                </a>
+            </div>
+            <div class="restaurant-item">
+                <a href="hungry.html">
+                <img src="rest6.jpg" alt="Restaurant 6">
+                <h3>Hungry Beings</h3>
+                </a>
+            </div>
+            <div class="restaurant-item">
+                <a href="garden.html">
+                <img src="rest7.jpg" alt="Restaurant 7">
+                <h3>Garden Grill</h3>
+                </a>
+            </div>
+            <div class="restaurant-item">
+                <a href="rustic.html">
+                <img src="rest4.jpg" alt="Restaurant 8">
+                <h3>Rustic Plate</h3>
+                </a>
+            </div>
+            <div class="restaurant-item">
+                <a href="spicy.html">
+                <img src="rest9.jpg" alt="Restaurant 9">
+                <h3>The Spicy Kitchen</h3>
+                </a>
+            </div>
+            <div class="restaurant-item">
+                <a href="tasty.html">
+                <img src="rest10.jpg" alt="Restaurant 10">
+                <h3>The Tasty Palette</h3>
+                </a>
+            </div>
+            <div class="restaurant-item">
+                <a href="mandi.html">
+                <img src="rest11.jpg" alt="Restaurant 11">
+                <h3>Arabic Mandi</h3>
+                </a>
+            </div>
+            <div class="restaurant-item">
+                <a href="sunset.html">
+                <img src="rest3.jpg" alt="Restaurant 12">
+                <h3>Sunset Cafe</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Restaurant Finder. All rights reserved.</p>
+    </footer>
+</body>
+</html>
